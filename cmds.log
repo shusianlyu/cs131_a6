@@ -1,0 +1,7 @@
+  136  grep $'\tY\t' amazon_reviews_us_Books_v1_02.tsv > verified.txt
+  137  grep -v $'\tY\t' amazon_reviews_us_Books_v1_02.tsv > unverified.txt
+  138  ls
+  139  head -n 100 verified.txt | awk 'BEGIN { FS = "\t" } ; { print $14 }' | tr -c '[:alnum:]' '[\n*]' | sort | uniq -c | sort -nr | head -11
+  140  head -n 100 unverified.txt | awk 'BEGIN { FS = "\t" } ; { print $14 }' | tr -c '[:alnum:]' '[\n*]' | sort | uniq -c | sort -nr | head -10
+  141  head -n 100 unverified.txt | awk 'BEGIN { FS = "\t" } ; { print $14 }' | tr -c '[:alnum:]' '[\n*]' | sort | uniq -c | sort -nr | head -11
+  142  history > cmds.log
