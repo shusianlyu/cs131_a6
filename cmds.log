@@ -1,7 +1,6 @@
-  136  grep $'\tY\t' amazon_reviews_us_Books_v1_02.tsv > verified.txt
-  137  grep -v $'\tY\t' amazon_reviews_us_Books_v1_02.tsv > unverified.txt
-  138  ls
-  139  head -n 100 verified.txt | awk 'BEGIN { FS = "\t" } ; { print $14 }' | tr -c '[:alnum:]' '[\n*]' | sort | uniq -c | sort -nr | head -11
-  140  head -n 100 unverified.txt | awk 'BEGIN { FS = "\t" } ; { print $14 }' | tr -c '[:alnum:]' '[\n*]' | sort | uniq -c | sort -nr | head -10
-  141  head -n 100 unverified.txt | awk 'BEGIN { FS = "\t" } ; { print $14 }' | tr -c '[:alnum:]' '[\n*]' | sort | uniq -c | sort -nr | head -11
-  142  history > cmds.log
+  158  head -n 100 amazon_reviews_us_Books_v1_02.tsv > sample.tsv
+  159  vi randomsample.sh
+  160  x=$((($RANDOM%99)+1))
+  161  chmod u+x randomsample.sh
+  162  ./randomsample.sh $x sample.tsv
+  163  history > cmds.log
