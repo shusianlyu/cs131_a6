@@ -1,6 +1,0 @@
-  158  head -n 100 amazon_reviews_us_Books_v1_02.tsv > sample.tsv
-  159  vi randomsample.sh
-  160  x=$((($RANDOM%99)+1))
-  161  chmod u+x randomsample.sh
-  162  ./randomsample.sh $x sample.tsv
-  163  history > cmds.log
