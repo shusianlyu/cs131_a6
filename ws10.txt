@@ -1,0 +1,37 @@
+ws10.txt
+Script started on 2022-11-13 03:03:46-05:00
+bash-4.4$ ls
+amazon_reviews_us_Books_v1_02.tsv	     numbers.py
+downloaded_tweets_extend_nolf2.tsv	     ws10.txt
+downloaded_tweets_extend_original_nolf2.tsv
+bash-4.4$ head -n 100 amazon_reviews_us_Books_v1_02.tsv > testcase.tsb[Kv
+bash-4.4$ time P[Kpu[Kytjon[K[K[Khon4[K3 numbers.py
+min 0 max 268 avg 10.93939393939394
+
+real	0m0.022s
+user	0m0.022s
+sys	0m0.000s
+bash-4.4$ vi numbers.sh
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;24r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[24;1H"numbers.sh" [New File][2;1H[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H[?25h[?25l[m[24;1H[1m-- INSERT --[m[24;14H[K[1;1H#!/bin/bash[2;1H[K[3;1Hcount=0;[3;9H[K[4;1Htotal=0;[4;9H[K[5;1Hfirst=1;[5;9H[K[6;1H[K[7;1Hfor i in $( awk 'BEGIN { FS[7;28H[K[7;28H[?25h[?25l = "\t" } ; { print $9 }' /mnt/scratch/jessie/testcass[8;1He.tsv )[8;8H[K[9;1Hdo[9;3H[K[10;1H  [10;3H[K[10;3H[?25h[?25l      if [ $first -eq 1 ]
+        then[11;13H[K[12;1H                first=0;[12;25H[K[13;1H               [13;16H[K[13;16H[?25h[?25l continue
+        fi[14;11H[K[15;1H        if [ $count -eq 0 ][15;28H[K[16;1H        then[16;13H[K[17;1H  [17;3H[K[17;3H[?25h[?25l[14Cminimum=$i
+                maximum=$i[18;27H[K[19;1H        fi[19;11H[K[20;1H [20;2H[K[20;2H[?25h[?25l[7Cif [ $i -gt $maximum ]
+        then[21;13H[K[22;1H                maxim[22;22H[K[22;22H[?25h[?25lum=$i
+        fi[23;11H[K[1;23r[1;1H[3M[1;24r[21;9Hif [ $i -lt $minimum ][22;9Hthen[24;11H[1m(paste) --[23;3H[?25h[?25l[m[14Cminimum=$i [?25h[?25l[1;23r[1;1H[2M[1;24r[22;9Hfi[23;9Htotal=$(echo $total+$i | bc)[23;20H[?25h[?25l[1;23r[1;1H[3M[1;24r[21;9Hcount=$(echo $count+1 | bc)
+done
+avg=$(echo "scale=2; $total / $count" | bc)[1;23r[23;1H
+[1;24r[23;1Hprintf "min %s max %s avg %s" "$minimu[?25h[?25l[24;1H[K[1;23r[23;1H
+[1;24r[22;39Hm" "$maximum" "$avg"
+[?25h[?25l
+:[?2004h[?25hx[?25l[?2004l"numbers.sh" [New] 32L, 665C written
+[?2004l[?1l>[?25h[?1049l[23;0;0tbash-4.4$ time[K[K[K[Kchmod u+x numbers.sh
+bash-4.4$ history[K[K[K[K[K[K[Ktome[K[K[Kime ./numbers.sh
+min 0 max 268 avg 10.93
+real	0m0.359s
+user	0m0.376s
+sys	0m0.059s
+bash-4.4$ history[K[K[K[K[K[K[Khistory > cmds.log
+bash-4.4$ exit
+
+Script done on 2022-11-13 03:05:30-05:00
+I think the Python program runs faster than shell script on my input file.
