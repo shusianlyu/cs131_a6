@@ -1,7 +1,0 @@
-  999  ls
- 1000  head -n 100 amazon_reviews_us_Books_v1_02.tsv > testcase.tsv
- 1001  time python3 numbers.py
- 1002  vi numbers.sh
- 1003  chmod u+x numbers.sh
- 1004  time ./numbers.sh
- 1005  history > cmds.log
